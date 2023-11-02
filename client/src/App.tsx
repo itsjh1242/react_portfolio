@@ -1,25 +1,37 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+// Media Query
+import { Desktop, Mobile } from './MediaQuery';
+import * as D from './styles/MainStyle';
+
+// Import Config
+import * as S from './config';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Desktop>
+        <D.DesktopContainer>
+          <D.DesktopDisplay>
+            <D.DesktopHead>
+              <h1 className="Title">{S.MainPageConfig.Title}</h1>
+              <p className="NameF">{S.MainPageConfig.SubTitleF}</p>
+              <p className="NameS">{S.MainPageConfig.SubTitleS}</p>
+            </D.DesktopHead>
+          </D.DesktopDisplay>
+        </D.DesktopContainer>
+      </Desktop>
+      <Mobile>
+        <D.MobileConatiner>
+          <D.MobileDisplay>
+            <D.MobileHead>
+              <h1 className="Title">{S.MainPageConfig.Title}</h1>
+              <p className="NameF">{S.MainPageConfig.SubTitleF}</p>
+              <p className="NameS">{S.MainPageConfig.SubTitleS}</p>
+            </D.MobileHead>
+          </D.MobileDisplay>
+        </D.MobileConatiner>
+      </Mobile>
+    </>
   );
 }
 
