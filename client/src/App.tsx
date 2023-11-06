@@ -1,7 +1,10 @@
 import React from 'react';
+import './App.css';
 // Media Query
 import { Desktop, Mobile } from './MediaQuery';
 import * as D from './styles/MainStyle';
+
+import { Routes, Route, Link, NavLink } from 'react-router-dom';
 
 // Import Config
 import * as S from './config';
@@ -9,6 +12,7 @@ import * as S from './config';
 function App() {
   return (
     <>
+      {/* Desktop */}
       <Desktop>
         <D.DesktopContainer>
           <D.DesktopDisplay>
@@ -53,9 +57,27 @@ function App() {
                 </D.DesktopProfileRight>
               </D.DesktopProfile>
             </D.DesktopHead>
+            <D.DesktopBody>
+              {S.MainPageConfig.ProfileBodyElement.map((element, index) => (
+                <D.DesktopBodyMenu>
+                  <D.DesktopBodyMenuRow>
+                    <D.DesktopBodyMenuTitle>
+                      {element[0]}
+                    </D.DesktopBodyMenuTitle>
+                    <D.DesktopBodyMenuContent>
+                      {element[1]}
+                    </D.DesktopBodyMenuContent>
+                  </D.DesktopBodyMenuRow>
+                  <a href={element[2]} className="DesktopBodyMenuLink">
+                    Go Page
+                  </a>
+                </D.DesktopBodyMenu>
+              ))}
+            </D.DesktopBody>
           </D.DesktopDisplay>
         </D.DesktopContainer>
       </Desktop>
+      {/* Mobile */}
       <Mobile>
         <D.MobileConatiner>
           <D.MobileDisplay>
@@ -95,6 +117,21 @@ function App() {
                 ))}
               </D.MobileProfileUnder>
             </D.MobileHead>
+            <D.MobileBody>
+              {S.MainPageConfig.ProfileBodyElement.map((element, index) => (
+                <D.MobileBodyMenu>
+                  <D.MobileBodyMenuRow>
+                    <D.MobileBodyMenuTitle>{element[0]}</D.MobileBodyMenuTitle>
+                    <D.MobileBodyMenuContent>
+                      {element[1]}
+                    </D.MobileBodyMenuContent>
+                  </D.MobileBodyMenuRow>
+                  <a href={element[2]} className="MobileBodyMenuLink">
+                    Go Page
+                  </a>
+                </D.MobileBodyMenu>
+              ))}
+            </D.MobileBody>
           </D.MobileDisplay>
         </D.MobileConatiner>
       </Mobile>

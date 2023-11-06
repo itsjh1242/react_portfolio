@@ -6,7 +6,7 @@ export const MainPageConfig = {
   Title: 'Personal Portfolio',
   SubTitleF: "I'm Jun Hyeon",
   SubTitleS: 'Full Stack Developer',
-  ProfileImageSrc: './images/profileImage.png',
+  ProfileImageSrc: './images/profileImage.jpg',
   ContactMailIconSrc: './icons/icon_mail.png',
   ContactGithubIconSrc: './icons/icon_github.png',
   // Profile Right Component
@@ -14,5 +14,12 @@ export const MainPageConfig = {
     ['4+', 'Years of\nExperience'],
     ['10+', 'Projects\nCompleted'],
     ['1+', 'Companies\nWorked'],
+  ],
+  // Profile Body Component
+  ProfileBodyElement: [
+    ['Experiences', 'Job Responsibilities, Achievements', '/'],
+    ['Works', 'Personal or Team Project Works', '/'],
+    ['Skills & Certificates', 'Key Skills, Certificates', '/'],
+    ['Activities', 'Extracurricular Activities, Leadership Roles', '/'],
   ],
 };
