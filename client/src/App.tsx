@@ -10,6 +10,22 @@ import { Routes, Route, Link, NavLink } from 'react-router-dom';
 import * as S from './config';
 
 function App() {
+  const onclickHandler = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    // MobileBodyMenuLink 요소의 참조를 가져오기
+    const mobileBodyMenuLink = e.currentTarget.querySelector<HTMLAnchorElement>('.MobileBodyMenuLink');
+    
+    // MobileBodyMenuLink 요소가 null이 아닌 경우에만 스타일을 변경
+    if (mobileBodyMenuLink) {
+      if (mobileBodyMenuLink.style.opacity == '0') {
+        mobileBodyMenuLink.style.opacity = '1';
+        mobileBodyMenuLink.style.paddingBottom = '12px';
+      } else {
+        mobileBodyMenuLink.style.opacity = '0';
+        mobileBodyMenuLink.style.paddingBottom = '0px';
+      }
+    }
+  }
+
   return (
     <>
       {/* Desktop */}
@@ -34,6 +50,7 @@ function App() {
                           alt=""
                         />
                       </a>
+                      <p>{S.MainPageConfig.Github}</p>
                     </div>
                   </D.DesktopProfileContact>
                 </D.DesktopProfileLeft>
@@ -99,6 +116,7 @@ function App() {
                           alt=""
                         />
                       </a>
+                      <p>{S.MainPageConfig.Github}</p>
                     </div>
                   </D.MobileProfileContact>
                 </D.MobileProfileLeft>
@@ -119,7 +137,7 @@ function App() {
             </D.MobileHead>
             <D.MobileBody>
               {S.MainPageConfig.ProfileBodyElement.map((element, index) => (
-                <D.MobileBodyMenu>
+                <D.MobileBodyMenu onClick={(e) => onclickHandler(e)}>
                   <D.MobileBodyMenuRow>
                     <D.MobileBodyMenuTitle>{element[0]}</D.MobileBodyMenuTitle>
                     <D.MobileBodyMenuContent>

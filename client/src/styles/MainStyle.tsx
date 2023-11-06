@@ -131,67 +131,75 @@ export const MobileProfileLeft = styled.div`
 `;
 
 export const DesktopProfileContact = styled.div`
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+justify-content: flex-start;
+padding-top: 20px;
+gap: 4px;
+width: 100%;
+
+& p {
+  font-family: Montserrat-Bold;
+  font-size: 20px;
+  color: white;
+}
+
+& .Email {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  padding-top: 20px;
-  gap: 20px;
+  gap: 8px;
   width: 100%;
 
-  & .Email {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-    background-color: #ffffff;
-    padding: 12px 16px;
-    gap: 10px;
-
-    & p {
-      font-size: 20px;
-      color: #000000;
-    }
+  & img {
+    width: 32px;
+    height: 32px;
   }
+}
 
-  & .Github {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-    background-color: #ffffff;
-    width: 48px;
-    height: 48px;
-    gap: 10px;
+& .Github {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  width: 100%;
+  
+  & a > img {
+    width: 32px;
+    height: 32px;
   }
+}
 `;
 
 export const MobileProfileContact = styled.div`
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   justify-content: flex-start;
   padding-top: 20px;
-  gap: 20px;
+  gap: 4px;
   width: 100%;
 
   & .Email {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-    background-color: #ffffff;
-    padding: 12px 16px;
+    justify-content: flex-start;
     gap: 4px;
-    width: 150px;
-    height: 48px;
+    width: 100%;
+
+    & img {
+      width: 24px;
+      height: 24px;
+    }
 
     & p {
+      font-family: Montserrat-Bold;
       font-size: 12px;
-      color: #000000;
+      color: white;
     }
   }
 
@@ -199,12 +207,20 @@ export const MobileProfileContact = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-    background-color: #ffffff;
-    width: 48px;
-    height: 48px;
-    gap: 10px;
+    justify-content: flex-start;
+    gap: 4px;
+    width: 100%;
+    
+    & a > img {
+      width: 24px;
+      height: 24px;
+    }
+
+    & p {
+      font-family: Montserrat-Bold;
+      font-size: 12px;
+      color: white;
+    }
   }
 `;
 
@@ -352,19 +368,22 @@ export const DesktopBodyMenu = styled.div`
   justify-content: center;
   width: 90%;
   height: 100%;
-  padding-bottom: 10px;
   border-bottom: 1px solid #ffffff;
   cursor: pointer;
+  transition: all 0.5s;
 
   & > .DesktopBodyMenuLink {
     font-size: 24px;
     font-family: 'Montserrat-Bold';
     text-decoration: underline;
     opacity: 0;
-    transition: 0.3s;
+    transition: all 0.5s;
   }
 
   &:hover {
+    & {
+      padding-bottom: 14px;
+    }
     & .DesktopBodyMenuLink {
       opacity: 1;
     }
@@ -378,14 +397,14 @@ export const MobileBodyMenu = styled.div`
   justify-content: space-between;
   width: 100%;
   height: 100%;
-  padding-bottom: 12px;
   border-bottom: 1px solid #ffffff;
 
   & > .MobileBodyMenuLink {
     font-size: 12px;
     font-family: 'Montserrat-Bold';
     text-decoration: underline;
-    opacity: 1;
+    opacity: 0;
+    transition: all 0.5s;
   }
 `;
 
