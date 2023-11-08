@@ -1,4 +1,8 @@
 export const MainPageConfig = {
+  // Global icon
+  GoBack: './icons/goBack.png',
+  ToggleUp: './icons/toggleUp.png',
+  ToggleDown: './icons/toggleDown.png',
   // Personal Info
   Email: 'itsjh1242@gmail.com',
   Github: 'itsjh1242',
@@ -17,9 +21,48 @@ export const MainPageConfig = {
   ],
   // Profile Body Component
   ProfileBodyElement: [
-    ['Experiences', 'Job Responsibilities, Achievements', '/'],
-    ['Works', 'Personal or Team Project Works', '/'],
-    ['Skills & Certificates', 'Key Skills, Certificates', '/'],
-    ['Activities', 'Extracurricular Activities, Leadership Roles', '/'],
+    ['Experiences', 'Job Responsibilities, Achievements', '/experience'],
+    ['Works', 'Personal or Team Project Works', '/work'],
+    ['Skills & Certificates', 'Key Skills, Certificates', '/skill'],
+    ['Activities', 'Extracurricular Activities, Leadership Roles', '/activity'],
   ],
+  // Menu Component
+  // Experience
+  Experiences: {
+    Title: 'Experience',
+    Desc: 'Job Responsibilities, Achievements',
+    Content: [
+      {
+        Title: 'Researcher and Developer in Mobile Application',
+        Position: 'Intern',
+        Period: '2019.01 - 2019.02',
+      },
+      {
+        Title: 'Tutoring in Python',
+        Position: 'Tutor',
+        Period: '2019.01 - 2019.02',
+      },
+    ],
+  },
+  // Works
+  Works: {
+    Title: 'Works',
+    Desc: 'Personal or Team Project Works',
+    Content: [
+      {
+        Title: 'Simple Design Portfolio Web Page',
+        Stacks: ['HTML, CSS, JavaScript', 'Node.js', 'Github'],
+      },
+    ],
+  },
+  // Skills & Certificates
+  Skills: {
+    Title: 'Skills & Certificates',
+    Desc: 'Key Skills, Certificates',
+  },
+  // Activities
+  Activities: {
+    Title: 'Activities',
+    Desc: 'Extracurricular Activities, Leadership Roles',
+  },
 };

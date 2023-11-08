@@ -131,47 +131,47 @@ export const MobileProfileLeft = styled.div`
 `;
 
 export const DesktopProfileContact = styled.div`
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-justify-content: flex-start;
-padding-top: 20px;
-gap: 4px;
-width: 100%;
-
-& p {
-  font-family: Montserrat-Bold;
-  font-size: 20px;
-  color: white;
-}
-
-& .Email {
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   justify-content: flex-start;
-  gap: 8px;
+  padding-top: 20px;
+  gap: 4px;
   width: 100%;
 
-  & img {
-    width: 32px;
-    height: 32px;
+  & p {
+    font-family: Montserrat-Bold;
+    font-size: 20px;
+    color: white;
   }
-}
 
-& .Github {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 8px;
-  width: 100%;
-  
-  & a > img {
-    width: 32px;
-    height: 32px;
+  & .Email {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    width: 100%;
+
+    & img {
+      width: 32px;
+      height: 32px;
+    }
   }
-}
+
+  & .Github {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    width: 100%;
+
+    & a > img {
+      width: 32px;
+      height: 32px;
+    }
+  }
 `;
 
 export const MobileProfileContact = styled.div`
@@ -210,7 +210,7 @@ export const MobileProfileContact = styled.div`
     justify-content: flex-start;
     gap: 4px;
     width: 100%;
-    
+
     & a > img {
       width: 24px;
       height: 24px;
@@ -456,4 +456,205 @@ export const DesktopBodyMenuLink = styled.a`
   text-decoration: underline;
   opacity: 0;
   transition: 0.3s;
+`;
+
+// Global Frame and Menu Header
+export const GlobalDesktopFrame = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+`;
+
+export const GlobalMobileFrame = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+`;
+
+export const GlobalDesktopContainer = styled.div`
+  width: 100%;
+  max-width: 1080px;
+  height: 100%;
+`;
+
+export const GlobalMobileContainer = styled.div`
+  width: 100%;
+  max-width: 440px;
+  height: 100%;
+`;
+
+export const DesktopMenuHeader = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1080px;
+  height: 100px;
+  border-bottom: 1px solid #ffffff;
+`;
+
+export const MobileMenuHeader = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 440px;
+  height: auto;
+  border-bottom: 1px solid #ffffff;
+`;
+
+export const DesktopMenuTitle = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  padding: 30px;
+
+  & > p {
+    font-size: 48px;
+    font-family: 'Montserrat-Bold';
+  }
+`;
+
+export const MobileMenuTitle = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 10px;
+
+  & > a > img {
+    width: 50%;
+    height: 50%;
+  }
+
+  & > p {
+    font-size: 24px;
+    font-family: 'Montserrat-Bold';
+  }
+`;
+
+export const DesktopMenuDesc = styled.p`
+  font-size: 28px;
+  font-family: 'Montserrat-Regular';
+`;
+
+export const MobileMenuDesc = styled.p`
+  font-size: 14px;
+  font-family: 'Montserrat-Regular';
+`;
+
+export const DesktopBodyFrame = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1080px;
+  height: 100%;
+  margin-top: 50px;
+  gap: 30px;
+`;
+
+export const MobileBodyFrame = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 440px;
+  height: 100%;
+  margin-top: 20px;
+  gap: 10px;
+`;
+
+export const DesktopComponentFrame = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1080px;
+  height: 100%;
+  padding: 30px;
+  border: 1px solid #ffffff;
+`;
+
+export const MobileComponentFrame = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 440px;
+  height: 100%;
+  padding: 10px;
+  border: 1px solid #ffffff;
+`;
+
+export const DesktopComponentTitle = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 30px;
+
+  & > p {
+    font-size: 48px;
+    font-family: 'Montserrat-Bold';
+  }
+
+  & > button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+  }
+`;
+
+export const MobileComponentTitle = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: auto;
+  padding-bottom: 10px;
+
+  & > p {
+    font-size: 24px;
+    font-family: 'Montserrat-Bold';
+  }
+
+  & > button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+  }
+
+  & > button > img {
+    width: 15px;
+    height: 10px;
+  }
 `;

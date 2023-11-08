@@ -4,19 +4,26 @@ import './App.css';
 import { Desktop, Mobile } from './MediaQuery';
 import * as D from './styles/MainStyle';
 
-import { Routes, Route, Link, NavLink } from 'react-router-dom';
-
 // Import Config
 import * as S from './config';
+
+// Import React Router
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Import Router and Routes
+import Experience from 'pages/Experience';
+import Work from 'pages/Work';
+import Skill from 'pages/Skill';
+import Activity from 'pages/Activity';
 
 function App() {
   const onclickHandler = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     // MobileBodyMenuLink 요소의 참조를 가져오기
-    const mobileBodyMenuLink = e.currentTarget.querySelector<HTMLAnchorElement>('.MobileBodyMenuLink');
-    
+    const mobileBodyMenuLink = e.currentTarget.querySelector<HTMLAnchorElement>(
+      '.MobileBodyMenuLink',
+    );
+
     // MobileBodyMenuLink 요소가 null이 아닌 경우에만 스타일을 변경
     if (mobileBodyMenuLink) {
-      if (mobileBodyMenuLink.style.opacity == '0') {
+      if (mobileBodyMenuLink.style.opacity === '0') {
         mobileBodyMenuLink.style.opacity = '1';
         mobileBodyMenuLink.style.paddingBottom = '12px';
       } else {
@@ -24,7 +31,7 @@ function App() {
         mobileBodyMenuLink.style.paddingBottom = '0px';
       }
     }
-  }
+  };
 
   return (
     <>
@@ -157,4 +164,18 @@ function App() {
   );
 }
 
-export default App;
+function Routing() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<App />} />
+        <Route path="/experience" element={<Experience />} />
+        <Route path="/work" element={<Work />} />
+        <Route path="/skill" element={<Skill />} />
+        <Route path="/activity" element={<Activity />} />
+      </Routes>
+    </Router>
+  );
+}
+
+export default Routing;
