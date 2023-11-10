@@ -1,5 +1,39 @@
 import styled from 'styled-components';
 
+export const DesktopResponsibilityTitle = styled.p`
+  font-size: 28px;
+  font-family: 'Montserrat-Bold';
+`;
+export const MobileResponsibilityTitle = styled.p`
+  font-size: 20px;
+  font-family: 'Montserrat-Bold';
+`;
+
+export const DesktopResponsibilityContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 8px;
+
+  & > p {
+    font-size: 18px;
+    font-family: 'Montserrat-Regular';
+  }
+`;
+export const MobileResponsibilityContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 4px;
+
+  & > p {
+    font-size: 14px;
+    font-family: 'Montserrat-Regular';
+  }
+`;
+
 // DesktopSide
 export const DesktopComponentBody = styled.div`
   display: flex;
@@ -30,21 +64,6 @@ export const MobileComponentBody = styled.div`
 
   & > p {
     font-size: 14px;
-    font-family: 'Montserrat-Bold';
-  }
-`;
-
-export const DesktopComponentHide = styled.div`
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  gap: 20px;
-  margin-top: 20px;
-
-  & > .Description {
-    font-size: 28px;
     font-family: 'Montserrat-Bold';
   }
 `;

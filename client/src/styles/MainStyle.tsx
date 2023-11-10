@@ -596,7 +596,7 @@ export const MobileComponentFrame = styled.div`
   width: 100%;
   max-width: 440px;
   height: 100%;
-  padding: 10px;
+  padding: 8px;
   border: 1px solid #ffffff;
 `;
 
@@ -607,7 +607,7 @@ export const DesktopComponentTitle = styled.div`
   justify-content: space-between;
   width: 100%;
   height: 100%;
-  padding-bottom: 30px;
+  padding-bottom: 10px;
 
   & > p {
     font-size: 48px;
@@ -627,14 +627,14 @@ export const DesktopComponentTitle = styled.div`
   }
 `;
 
-export const MobileComponentTitle = styled.div`
+export const MobileComponentTitle = styled.div<{ IsLeft: Boolean }>`
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   width: 100%;
   height: auto;
-  padding-bottom: 10px;
+  padding-bottom: 4px;
 
   & > p {
     font-size: 24px;
@@ -654,7 +654,129 @@ export const MobileComponentTitle = styled.div`
   }
 
   & > button > img {
-    width: 15px;
-    height: 10px;
+    width: ${(props) => (props.IsLeft ? '10px' : '15px')};
+    height: ${(props) => (props.IsLeft ? '15px' : '10px')};
+  }
+`;
+
+export const DesktopComponentHide = styled.div`
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  gap: 20px;
+  margin-top: 20px;
+`;
+
+export const MobileComponentHide = styled.div`
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  gap: 10px;
+  margin-top: 10px;
+`;
+
+export const ComponentCol = styled.div<{ isdesktop: String }>`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: ${(props) => (props.isdesktop === 'true' ? '8px' : '4px')};
+`;
+
+export const DesktopContentTitle = styled.p`
+  font-size: 28px;
+  font-family: 'Montserrat-Bold';
+`;
+export const MobileContentTitle = styled.p`
+  font-size: 20px;
+  font-family: 'Montserrat-Bold';
+`;
+
+export const DesktopDescriptionContent = styled.p`
+  font-size: 18px;
+  font-family: 'Montserrat-Regular';
+`;
+export const MobileDescriptionContent = styled.p`
+  font-size: 14px;
+  font-family: 'Montserrat-Regular';
+`;
+
+export const DesktopImageSlider = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1020px;
+  height: 100%;
+  gap: 60px;
+
+  & > button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+  }
+`;
+
+export const MobileImageSlider = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 420px;
+  height: 100%;
+  gap: 15px;
+
+  & > button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+
+    & > img {
+      width: 10px;
+      height: 15px;
+    }
+  }
+`;
+
+export const DekstopImageBox = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 700px;
+  height: 400px;
+  overflow: hidden;
+
+  & > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+`;
+
+export const MobileImageBox = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 200px;
+  overflow: hidden;
+
+  & > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 `;

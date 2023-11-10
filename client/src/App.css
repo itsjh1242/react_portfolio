@@ -50,10 +50,10 @@
   }
 }
 
-.none {
+.hide {
   display: none;
 }
 
-.flex {
+.show {
   display: flex;
 }
