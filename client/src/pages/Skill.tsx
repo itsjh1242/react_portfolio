@@ -21,15 +21,22 @@ function Skill() {
     setAwardsToggleState(!AwardsToggleState);
   };
 
-  const [AwardsComponentToggleState, setAwardsComponentToggleState] = useState(
-    S.MainPageConfig.Skills.Awards.map(() => true),
+  const [ImageSlideCount, setImageSlideCount] = useState(
+    S.MainPageConfig.Skills.Awards.map(() => 0),
   );
-  const toggleAwardsComponent = (index: number) => {
-    const newAwardsComponentToggleState = [...AwardsComponentToggleState];
-    newAwardsComponentToggleState[index] =
-      !newAwardsComponentToggleState[index];
-    setAwardsComponentToggleState(newAwardsComponentToggleState);
+  const ImageCount = (index: number, plus: boolean) => {
+    const newImageSlideCount = [...ImageSlideCount];
+    const imageLength = S.MainPageConfig.Skills.Awards[index].Image.length;
+    if (plus) {
+      console.log(S.MainPageConfig.Skills.Awards[index].Image.length);
+      newImageSlideCount[index] = (newImageSlideCount[index] + 1) % imageLength;
+    } else {
+      newImageSlideCount[index] =
+        (newImageSlideCount[index] - 1 + imageLength) % imageLength;
+    }
+    setImageSlideCount(newImageSlideCount);
   };
+
 
   return (
     <>
@@ -143,12 +150,62 @@ function Skill() {
                 >
                   {S.MainPageConfig.Skills.Awards.map((item, index) => (
                     <D.DesktopAwardComponent key={index}>
-                      <D.ComponentTitle
-                        isdesktop="true"
-                        isleft={AwardsComponentToggleState ? 'true' : 'false'}
-                      >
-                        <p>{item.Title}</p>
-                      </D.ComponentTitle>
+                      <G.ComponentCol isdesktop='true'>
+                        <D.ComponentTitle
+                          isdesktop="true"
+                          isleft={AwardsToggleState ? 'true' : 'false'}
+                        >
+                          <p>{item.Title}</p>
+                        </D.ComponentTitle>
+                        <D.AwardSubtitle
+                          fontSize='28px'>
+                          <p>{item.Prize}</p>
+                          <p>{item.Award}, {item.Year}</p>
+                        </D.AwardSubtitle>
+                      </G.ComponentCol>
+                      <G.ComponentCol isdesktop='true'>
+                        <D.AwardTitle
+                          fontSize="28px">
+                          Description
+                        </D.AwardTitle>
+                        <D.AwardContent
+                          fontSize='20px'>
+                            {item.Description}
+                        </D.AwardContent>
+                      </G.ComponentCol>
+                      <G.ComponentCol isdesktop='true'>
+                        <D.AwardTitle
+                          fontSize="28px">
+                          Roles
+                        </D.AwardTitle>
+                        {item.Role.map((r_item, r_index) => (
+                          <D.AwardContent
+                          key={r_index}
+                          fontSize='20px'>
+                            • {r_item}
+                          </D.AwardContent>
+                        ))}
+                      </G.ComponentCol>
+                      <G.ComponentCol isdesktop='true'>
+                      <D.AwardTitle
+                          fontSize="28px">
+                          Images
+                        </D.AwardTitle>
+                        <G.DesktopImageSlider>
+                        <button onClick={() => ImageCount(index, false)}>
+                          <img src={S.MainPageConfig.ToggleLeft} alt="" />
+                        </button>
+                        <G.DekstopImageBox>
+                          <img
+                            src={item.Image[ImageSlideCount[index]]}
+                            alt=""
+                          ></img>
+                        </G.DekstopImageBox>
+                        <button onClick={() => ImageCount(index, true)}>
+                          <img src={S.MainPageConfig.ToggleRight} alt="" />
+                        </button>
+                      </G.DesktopImageSlider>
+                      </G.ComponentCol>
                     </D.DesktopAwardComponent>
                   ))}
                 </D.HideComponent>
@@ -268,14 +325,64 @@ function Skill() {
                   marginTop="10px"
                 >
                   {S.MainPageConfig.Skills.Awards.map((item, index) => (
-                    <D.DesktopAwardComponent key={index}>
-                      <D.ComponentTitle
-                        isdesktop="false"
-                        isleft={AwardsComponentToggleState ? 'true' : 'false'}
-                      >
-                        <p>{item.Title}</p>
-                      </D.ComponentTitle>
-                    </D.DesktopAwardComponent>
+                    <D.MobileAwardComponent key={index}>
+                      <G.ComponentCol isdesktop='true'>
+                        <D.ComponentTitle
+                          isdesktop="false"
+                          isleft={AwardsToggleState ? 'true' : 'false'}
+                        >
+                          <p>{item.Title}</p>
+                        </D.ComponentTitle>
+                        <D.AwardSubtitle
+                          fontSize='14px'>
+                          <p>{item.Prize}</p>
+                          <p>{item.Award}, {item.Year}</p>
+                        </D.AwardSubtitle>
+                      </G.ComponentCol>
+                      <G.ComponentCol isdesktop='false'>
+                        <D.AwardTitle
+                          fontSize="18px">
+                          Description
+                        </D.AwardTitle>
+                        <D.AwardContent
+                          fontSize='12px'>
+                            {item.Description}
+                        </D.AwardContent>
+                      </G.ComponentCol>
+                      <G.ComponentCol isdesktop='false'>
+                        <D.AwardTitle
+                          fontSize="18px">
+                          Roles
+                        </D.AwardTitle>
+                        {item.Role.map((r_item, r_index) => (
+                          <D.AwardContent
+                          key={r_index}
+                          fontSize='12px'>
+                            • {r_item}
+                          </D.AwardContent>
+                        ))}
+                      </G.ComponentCol>
+                      <G.ComponentCol isdesktop='true'>
+                      <D.AwardTitle
+                          fontSize="18px">
+                          Images
+                        </D.AwardTitle>
+                        <G.MobileImageSlider>
+                        <button onClick={() => ImageCount(index, false)}>
+                          <img src={S.MainPageConfig.ToggleLeft} alt="" />
+                        </button>
+                        <G.MobileImageBox>
+                          <img
+                            src={item.Image[ImageSlideCount[index]]}
+                            alt=""
+                          ></img>
+                        </G.MobileImageBox>
+                        <button onClick={() => ImageCount(index, true)}>
+                          <img src={S.MainPageConfig.ToggleRight} alt="" />
+                        </button>
+                      </G.MobileImageSlider>
+                      </G.ComponentCol>
+                    </D.MobileAwardComponent>
                   ))}
                 </D.HideComponent>
               </D.ContentFrame>

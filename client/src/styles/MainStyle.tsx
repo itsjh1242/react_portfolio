@@ -684,6 +684,8 @@ export const ComponentCol = styled.div<{ isdesktop: String }>`
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
+  width: 100%;
+  height: 100%;
   gap: ${(props) => (props.isdesktop === 'true' ? '8px' : '4px')};
 `;
 

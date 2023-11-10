@@ -132,7 +132,7 @@ export const DesktopLicenseComponent = styled.div`
 
   & > p {
     font-size: 24px;
-    font-family: 'Montserrat-Reguler';
+    font-family: 'Montserrat-Regular';
   }
 `;
 
@@ -147,15 +147,15 @@ export const MobileLicenseComponent = styled.div`
 
   & > p {
     font-size: 14px;
-    font-family: 'Montserrat-Reguler';
+    font-family: 'Montserrat-Regular';
   }
 `;
 
 export const DesktopAwardComponent = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-start;
   width: 100%;
   height: 100%;
   gap: 20px;
@@ -174,3 +174,38 @@ export const MobileAwardComponent = styled.div`
   border: 1px solid #ffffff;
   padding: 10px 5px;
 `;
+
+interface AwardSubtitleProps {
+  fontSize: string;
+}
+export const AwardSubtitle = styled.div<AwardSubtitleProps>`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+
+  & > p {
+    font-size: ${(props) => props.fontSize};
+    font-family: 'Montserrat-Regular';
+  }
+`;
+
+interface AwardTitleProps {
+  fontSize: string;
+}
+export const AwardTitle = styled.p<AwardTitleProps>`
+  font-size: ${(props) => props.fontSize};
+  font-family: 'Montserrat-Bold';
+`;
+
+interface AwardContentProps {
+  fontSize: string;
+}
+export const AwardContent = styled.p<AwardContentProps>`
+
+  font-size: ${(props) => props.fontSize};
+  font-family: 'Montserrat-Regular';
+`;
+

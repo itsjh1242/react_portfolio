@@ -96,7 +96,7 @@ export const MainPageConfig = {
           'Support Panel Design',
           'Support Producting Video',
         ],
-        Image: ['./images/sampleimage.png', './images/sampleimage2.jpg'],
+        Image: ['./images/sampleimage2.jpg', './images/sampleimage.png'],
       },
       {
         Title: 'Touchable Hair Catalog for Blind',
@@ -119,5 +119,19 @@ export const MainPageConfig = {
   Activities: {
     Title: 'Activities',
     Desc: 'Extracurricular Activities, Leadership Roles',
+    Content: [
+      {
+        Title: 'IT Volunteer Club',
+        Period: 'Jan 2023 - Nov 2023',
+        Description: 'Research and Develop about the way of how to motion password work using mobile phone.',
+        Image: ['./images/sampleimage.png', './images/sampleimage2.jpg'],
+      },
+      {
+        Title: 'IT Volunteer Club',
+        Period: 'Jan 2023 - Nov 2023',
+        Description: 'Research and Develop about the way of how to motion password work using mobile phone.',
+        Image: ['./images/sampleimage.png', './images/sampleimage2.jpg'],
+      }
+    ],
   },
 };
