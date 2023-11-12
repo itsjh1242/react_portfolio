@@ -6,9 +6,14 @@ import * as G from '../styles/MainStyle';
 import * as D from '../styles/ActivityPageStyle';
 
 function Activity() {
-  const [ToggleState, setToggleState] = useState(true);
-  const toggle = () => {
-    setToggleState(!ToggleState);
+  const [hiddenState, setHiddenState] = useState(
+    S.MainPageConfig.Activities.Content.map(() => true),
+  );
+
+  const toggleDescription = (index: number) => {
+    const newHiddenState = [...hiddenState];
+    newHiddenState[index] = !newHiddenState[index];
+    setHiddenState(newHiddenState);
   };
 
   const [ImageSlideCount, setImageSlideCount] = useState(
@@ -49,13 +54,13 @@ function Activity() {
                 <G.DesktopComponentFrame>
                 <D.ComponentTitle
                     isdesktop="true"
-                    isleft={ToggleState ? 'true' : 'false'}
+                    isleft={hiddenState[index] ? 'true' : 'false'}
                   >
                     <p>{item.Title}</p>
-                    <button onClick={() => toggle()}>
+                    <button onClick={() => toggleDescription(index)}>
                       <img
                         src={
-                          ToggleState
+                          hiddenState[index]
                             ? S.MainPageConfig.ToggleLeft
                             : S.MainPageConfig.ToggleDown
                         }
@@ -68,7 +73,7 @@ function Activity() {
                   marginTop='10px'><p>{item.Period}</p>
                   </D.ComponentSubTitle>
                   <D.HideComponent
-                    className={ToggleState ? 'hide' : 'show'}
+                    className={hiddenState[index] ? 'hide' : 'show'}
                     gap="20px"
                     marginTop="20px"
                   >
@@ -126,13 +131,13 @@ function Activity() {
                 <G.MobileComponentFrame>
                 <D.ComponentTitle
                     isdesktop="false"
-                    isleft={ToggleState ? 'true' : 'false'}
+                    isleft={ hiddenState[index] ? 'true' : 'false'}
                   >
                     <p>{item.Title}</p>
-                    <button onClick={() => toggle()}>
+                    <button onClick={() => toggleDescription(index)}>
                       <img
                         src={
-                          ToggleState
+                          hiddenState[index]
                             ? S.MainPageConfig.ToggleLeft
                             : S.MainPageConfig.ToggleDown
                         }
@@ -144,14 +149,14 @@ function Activity() {
                   fontSize='12px'
                   marginTop='5px'><p>{item.Period}</p></D.ComponentSubTitle>
                   <D.HideComponent
-                    className={ToggleState ? 'hide' : 'show'}
+                    className={hiddenState[index] ? 'hide' : 'show'}
                     gap="20px"
                     marginTop="20px"
                   >
                   <G.ComponentCol isdesktop='false'>
                     <D.AwardTitle fontSize='18px'>Description</D.AwardTitle>
                     <D.AwardContent
-                          fontSize='18px'>
+                          fontSize='14px'>
                             {item.Description}
                         </D.AwardContent>
                   </G.ComponentCol>

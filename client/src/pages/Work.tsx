@@ -91,7 +91,7 @@ function Work() {
                         <G.DesktopContentTitle>Role</G.DesktopContentTitle>
                         <D.DesktopRoleContent>
                           {item.Role.map((Role, r_index) => (
-                            <p key={r_index}>▷ {Role}</p>
+                            <p key={r_index}>• {Role}</p>
                           ))}
                         </D.DesktopRoleContent>
                       </G.ComponentCol>
@@ -174,7 +174,7 @@ function Work() {
                       <G.MobileContentTitle>Role</G.MobileContentTitle>
                       <D.MobileRoleContent>
                         {item.Role.map((Role, r_index) => (
-                          <p key={r_index}>▷ {Role}</p>
+                          <p key={r_index}>• {Role}</p>
                         ))}
                       </D.MobileRoleContent>
                     </G.ComponentCol>

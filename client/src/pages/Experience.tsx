@@ -68,7 +68,7 @@ function Experience() {
                       </D.DesktopResponsibilityTitle>
                       <D.DesktopResponsibilityContent>
                         {item.Responsibility.map((r_item, r_index) => (
-                          <p key={r_index}>▷ {r_item}</p>
+                          <p key={r_index}>• {r_item}</p>
                         ))}
                       </D.DesktopResponsibilityContent>
                     </G.ComponentCol>
@@ -132,7 +132,7 @@ function Experience() {
                       </D.MobileResponsibilityTitle>
                       <D.MobileResponsibilityContent>
                         {item.Responsibility.map((r_item, r_index) => (
-                          <p>▷ {r_item}</p>
+                          <p key={r_index}>• {r_item}</p>
                         ))}
                       </D.MobileResponsibilityContent>
                     </G.ComponentCol>

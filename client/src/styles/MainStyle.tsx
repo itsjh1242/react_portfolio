@@ -13,7 +13,7 @@ export const MobileConatiner = styled.div`
   width: 100%;
   height: 100%;
   min-width: 320px;
-  padding: 10px 30px;
+  padding: 10px 15px;
 `;
 
 export const DesktopDisplay = styled.div`
@@ -120,12 +120,12 @@ export const MobileProfileLeft = styled.div`
   height: 100%;
 
   & .NameF {
-    font-size: 30px;
+    font-size: 24px;
     font-weight: bold;
   }
 
   & .NameS {
-    font-size: 22px;
+    font-size: 14px;
     font-weight: bold;
   }
 `;
@@ -264,8 +264,8 @@ export const MobileProfileImageBox = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   background-color: #ffffff;
   border-radius: 50%;
   overflow: hidden;
@@ -435,7 +435,7 @@ export const DesktopBodyMenuTitle = styled.p`
 `;
 
 export const MobileBodyMenuTitle = styled.p`
-  font-size: 30px;
+  font-size: 20px;
   font-family: 'Montserrat-Bold';
   padding-bottom: 8px;
 `;
@@ -446,7 +446,7 @@ export const DesktopBodyMenuContent = styled.p`
 `;
 
 export const MobileBodyMenuContent = styled.p`
-  font-size: 12px;
+  font-size: 10px;
   font-family: 'Montserrat-Regular';
 `;
 
@@ -483,8 +483,9 @@ export const GlobalDesktopContainer = styled.div`
 
 export const GlobalMobileContainer = styled.div`
   width: 100%;
-  max-width: 440px;
+  max-width: 460px;
   height: 100%;
+  padding: 8px 8px;
 `;
 
 export const DesktopMenuHeader = styled.div`
@@ -501,7 +502,7 @@ export const DesktopMenuHeader = styled.div`
 export const MobileMenuHeader = styled.div`
   display: flex;
   flex-direction: row;
-  align-items: flex-end;
+  align-items: center;
   justify-content: space-between;
   width: 100%;
   max-width: 440px;
@@ -537,7 +538,7 @@ export const MobileMenuTitle = styled.div`
   }
 
   & > p {
-    font-size: 24px;
+    font-size: 18px;
     font-family: 'Montserrat-Bold';
   }
 `;
@@ -548,7 +549,7 @@ export const DesktopMenuDesc = styled.p`
 `;
 
 export const MobileMenuDesc = styled.p`
-  font-size: 14px;
+  font-size: 10px;
   font-family: 'Montserrat-Regular';
 `;
 
