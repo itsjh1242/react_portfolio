@@ -9,6 +9,7 @@ function Experience() {
   const [hiddenState, setHiddenState] = useState(
     S.MainPageConfig.Experiences.Content.map(() => true),
   );
+  hiddenState[0] = false;
 
   const toggleDescription = (index: number) => {
     const newHiddenState = [...hiddenState];

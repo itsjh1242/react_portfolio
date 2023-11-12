@@ -10,6 +10,8 @@ function Work() {
     S.MainPageConfig.Works.Content.map(() => true),
   );
 
+  hiddenState[0] = false;
+
   const toggleDescription = (index: number) => {
     const newHiddenState = [...hiddenState];
     newHiddenState[index] = !newHiddenState[index];

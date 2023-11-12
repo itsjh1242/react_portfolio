@@ -491,7 +491,7 @@ export const GlobalMobileContainer = styled.div`
 export const DesktopMenuHeader = styled.div`
   display: flex;
   flex-direction: row;
-  align-items: flex-end;
+  align-items: center;
   justify-content: space-between;
   width: 100%;
   max-width: 1080px;
