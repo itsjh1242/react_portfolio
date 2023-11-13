@@ -39,6 +39,11 @@ export const DesktopComponentStack = styled.div`
   justify-content: flex-start;
   gap: 20px;
   padding: 5px 0px;
+
+  & > img {
+    width: 40px;
+    height: 40px;
+  }
 `;
 
 export const MobileComponentStack = styled.div`

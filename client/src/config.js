@@ -53,6 +53,27 @@ export const MainPageConfig = {
         Description: 'None',
         Responsibility: ['None', 'None', 'None'],
       },
+      {
+        Title: 'Tutoring in Node.js',
+        Position: 'Tutor',
+        Period: 'Sep 2022 - Dec 2022',
+        Description: 'None',
+        Responsibility: ['Teach how to implement CRUD operations and create web-site using Node.js', 'Teach how to design web-site with CSS'],
+      },
+      {
+        Title: 'Assistant Instructor',
+        Position: 'Assistant',
+        Period: 'Sep 2022 - Dec 2022',
+        Description: 'None',
+        Responsibility: ['Assist main teacher to Scratch program', 'Provide computer program guidance and teach the how to use and utilze program for student', 'Help students troubleshoot programming issues and encourage their creativity'],
+      },
+      {
+        Title: 'Tennis Matching Application Developer ',
+        Position: 'Intern',
+        Period: 'Jun 2022 - Aug 2022',
+        Description: 'None',
+        Responsibility: ['Assist to develop a tennis matching application using Flutter', 'Provide and support to make implementation of database structures with Firebase', 'Assist to conect the development of server and database communication functionalities'],
+      },
     ],
   },
   // Works
@@ -68,6 +89,29 @@ export const MainPageConfig = {
         Role: ['Main Developer', 'UI Designer'],
         Image: ['./images/sampleimage.png', './images/sampleimage2.jpg'],
       },
+      {
+        Title: 'Motion recognition-Based Double-Cipher Authenticatioin System',
+        Stacks: ['Flutter', 'MySQL', 'Nodejs', 'Github'],
+        Description: 'None',
+        Role: ['Main Developer', 'UI Designer'],
+        Image: ['./images/sampleimage.png', './images/sampleimage2.jpg'],
+      },
+      {
+        Title: 'AI Chatbot-based Diary Writing System for Positive Emotion',
+        Stacks: ['Html', 'CSS', 'Javascript', 'Python', 'Github'],
+        Description:
+          'None',
+        Role: ['Main Developer', 'UI Designer'],
+        Image: ['./images/sampleimage.png', './images/sampleimage2.jpg'],
+      },
+      {
+        Title: 'Finger recognition absenteeism management system using Arduino',
+        Stacks: ['Html', 'CSS', 'Javascript', 'Nodejs', 'Arduino', 'Github'],
+        Description:
+          'None',
+        Role: ['Main Developer', 'UI Designer'],
+        Image: ['./images/sampleimage.png', './images/sampleimage2.jpg'],
+      }
     ],
   },
   // Skills & Certificates
@@ -100,9 +144,24 @@ export const MainPageConfig = {
       },
       {
         Title: 'Touchable Hair Catalog for Blind',
-        Award: 'Red dot Award',
+        Award: 'Young One Adc',
+        Year: '2023',
+        Prize: 'Merit and Short-list accolades',
+        Description:
+          'We made this “Touchable Hair Catalog” for Blind people. When they go to hair shop,  can’t see their hair style and even the hair catalog. So, we decided to make 3D hair catalog for them. Using this catalog, blinds can recognize various hair style.',
+        Role: [
+          'Idea Maker',
+          'Catalog Maker',
+          'Support Panel Design',
+          'Support Producting Video',
+        ],
+        Image: ['./images/sampleimage2.jpg', './images/sampleimage.png'],
+      },
+      {
+        Title: 'Touchable Hair Catalog for Blind',
+        Award: 'Mad Stars',
         Year: '2022',
-        Prize: 'Best of the Best',
+        Prize: 'Crystal',
         Description:
           'We made this “Touchable Hair Catalog” for Blind people. When they go to hair shop,  can’t see their hair style and even the hair catalog. So, we decided to make 3D hair catalog for them. Using this catalog, blinds can recognize various hair style.',
         Role: [
@@ -127,9 +186,15 @@ export const MainPageConfig = {
         Image: ['./images/sampleimage.png', './images/sampleimage2.jpg'],
       },
       {
-        Title: 'IT Volunteer Club',
-        Period: 'Jan 2023 - Nov 2023',
+        Title: 'Dongseo University Volunteer Group',
+        Period: 'Mar 2023 - Dec 2023',
         Description: 'Research and Develop about the way of how to motion password work using mobile phone.',
+        Image: ['./images/sampleimage.png', './images/sampleimage2.jpg'],
+      },
+      {
+        Title: 'Military Service',
+        Period: 'Jan 2019 - Aug 2020',
+        Description: '•	Honorably discharged from the Marine Corps in August 2020',
         Image: ['./images/sampleimage.png', './images/sampleimage2.jpg'],
       }
     ],
