@@ -7,10 +7,10 @@ import * as D from '../styles/WorkPageStyle';
 
 function Work() {
   const [hiddenState, setHiddenState] = useState(
-    S.MainPageConfig.Works.Content.map(() => true),
+    S.MainPageConfig.Works.Content.map((item, index) =>
+      index === 0 ? false : true,
+    ),
   );
-
-  hiddenState[0] = false;
 
   const toggleDescription = (index: number) => {
     const newHiddenState = [...hiddenState];

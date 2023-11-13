@@ -7,9 +7,10 @@ import * as D from '../styles/ExperiencePageStyle';
 
 function Experience() {
   const [hiddenState, setHiddenState] = useState(
-    S.MainPageConfig.Experiences.Content.map(() => true),
+    S.MainPageConfig.Experiences.Content.map((item, index) =>
+      index === 0 ? false : true,
+    ),
   );
-  hiddenState[0] = false;
 
   const toggleDescription = (index: number) => {
     const newHiddenState = [...hiddenState];

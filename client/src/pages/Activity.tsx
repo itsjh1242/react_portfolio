@@ -7,11 +7,10 @@ import * as D from '../styles/ActivityPageStyle';
 
 function Activity() {
   const [hiddenState, setHiddenState] = useState(
-    S.MainPageConfig.Activities.Content.map(() => true),
+    S.MainPageConfig.Activities.Content.map((item, index) =>
+      index === 0 ? false : true,
+    ),
   );
-
-  hiddenState[0] = false;
-
   const toggleDescription = (index: number) => {
     const newHiddenState = [...hiddenState];
     newHiddenState[index] = !newHiddenState[index];
@@ -54,7 +53,7 @@ function Activity() {
             <G.DesktopBodyFrame>
               {S.MainPageConfig.Activities.Content.map((item, index) => (
                 <G.DesktopComponentFrame>
-                <D.ComponentTitle
+                  <D.ComponentTitle
                     isdesktop="true"
                     isleft={hiddenState[index] ? 'true' : 'false'}
                   >
@@ -70,28 +69,23 @@ function Activity() {
                       />
                     </button>
                   </D.ComponentTitle>
-                  <D.ComponentSubTitle
-                  fontSize='18px'
-                  marginTop='10px'><p>{item.Period}</p>
+                  <D.ComponentSubTitle fontSize="18px" marginTop="10px">
+                    <p>{item.Period}</p>
                   </D.ComponentSubTitle>
                   <D.HideComponent
                     className={hiddenState[index] ? 'hide' : 'show'}
                     gap="20px"
                     marginTop="20px"
                   >
-                  <G.ComponentCol isdesktop='true'>
-                    <D.AwardTitle fontSize='28px'>Description</D.AwardTitle>
-                    <D.AwardContent
-                          fontSize='20px'>
-                            {item.Description}
-                        </D.AwardContent>
-                  </G.ComponentCol>
-                  <G.ComponentCol isdesktop='true'>
-                      <D.AwardTitle
-                          fontSize="28px">
-                          Images
-                        </D.AwardTitle>
-                        <G.DesktopImageSlider>
+                    <G.ComponentCol isdesktop="true">
+                      <D.AwardTitle fontSize="28px">Description</D.AwardTitle>
+                      <D.AwardContent fontSize="20px">
+                        {item.Description}
+                      </D.AwardContent>
+                    </G.ComponentCol>
+                    <G.ComponentCol isdesktop="true">
+                      <D.AwardTitle fontSize="28px">Images</D.AwardTitle>
+                      <G.DesktopImageSlider>
                         <button onClick={() => ImageCount(index, false)}>
                           <img src={S.MainPageConfig.ToggleLeft} alt="" />
                         </button>
@@ -105,8 +99,8 @@ function Activity() {
                           <img src={S.MainPageConfig.ToggleRight} alt="" />
                         </button>
                       </G.DesktopImageSlider>
-                      </G.ComponentCol>
-                </D.HideComponent>
+                    </G.ComponentCol>
+                  </D.HideComponent>
                 </G.DesktopComponentFrame>
               ))}
             </G.DesktopBodyFrame>
@@ -129,11 +123,11 @@ function Activity() {
               </G.MobileMenuDesc>
             </G.MobileMenuHeader>
             <G.MobileBodyFrame>
-            {S.MainPageConfig.Activities.Content.map((item, index) => (
+              {S.MainPageConfig.Activities.Content.map((item, index) => (
                 <G.MobileComponentFrame>
-                <D.ComponentTitle
+                  <D.ComponentTitle
                     isdesktop="false"
-                    isleft={ hiddenState[index] ? 'true' : 'false'}
+                    isleft={hiddenState[index] ? 'true' : 'false'}
                   >
                     <p>{item.Title}</p>
                     <button onClick={() => toggleDescription(index)}>
@@ -147,27 +141,23 @@ function Activity() {
                       />
                     </button>
                   </D.ComponentTitle>
-                  <D.ComponentSubTitle
-                  fontSize='12px'
-                  marginTop='5px'><p>{item.Period}</p></D.ComponentSubTitle>
+                  <D.ComponentSubTitle fontSize="12px" marginTop="5px">
+                    <p>{item.Period}</p>
+                  </D.ComponentSubTitle>
                   <D.HideComponent
                     className={hiddenState[index] ? 'hide' : 'show'}
                     gap="20px"
                     marginTop="20px"
                   >
-                  <G.ComponentCol isdesktop='false'>
-                    <D.AwardTitle fontSize='18px'>Description</D.AwardTitle>
-                    <D.AwardContent
-                          fontSize='14px'>
-                            {item.Description}
-                        </D.AwardContent>
-                  </G.ComponentCol>
-                  <G.ComponentCol isdesktop='false'>
-                      <D.AwardTitle
-                          fontSize="20px">
-                          Images
-                        </D.AwardTitle>
-                        <G.MobileImageSlider>
+                    <G.ComponentCol isdesktop="false">
+                      <D.AwardTitle fontSize="18px">Description</D.AwardTitle>
+                      <D.AwardContent fontSize="14px">
+                        {item.Description}
+                      </D.AwardContent>
+                    </G.ComponentCol>
+                    <G.ComponentCol isdesktop="false">
+                      <D.AwardTitle fontSize="20px">Images</D.AwardTitle>
+                      <G.MobileImageSlider>
                         <button onClick={() => ImageCount(index, false)}>
                           <img src={S.MainPageConfig.ToggleLeft} alt="" />
                         </button>
@@ -181,8 +171,8 @@ function Activity() {
                           <img src={S.MainPageConfig.ToggleRight} alt="" />
                         </button>
                       </G.MobileImageSlider>
-                      </G.ComponentCol>
-                </D.HideComponent>
+                    </G.ComponentCol>
+                  </D.HideComponent>
                 </G.MobileComponentFrame>
               ))}
             </G.MobileBodyFrame>

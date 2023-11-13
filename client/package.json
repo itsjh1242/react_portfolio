@@ -21,7 +21,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "sudo iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 80 -j REDIRECT --to-port 3000 && react-scripts start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
